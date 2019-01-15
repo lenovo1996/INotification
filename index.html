@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INotification</title>
+    <link rel="stylesheet" href="./assets/css/INotification.white.css">
+</head>
+<body>
+
+<div style="text-align: center">
+    <button onclick="callNoti()">Click</button>
+</div>
+
+
+<script src="./assets/js/INotification.js"></script>
+
+<script>
+
+    let iNotification = new INotification();
+    let i = 0;
+
+    function callNoti() {
+        i++;
+
+        let type = [
+            'default',
+            'success',
+            'info',
+            'warning',
+            'danger',
+            'error'
+        ];
+
+        let position = [
+            'top-right',
+            'bottom-left'
+        ];
+
+        let animation = ['fade', 'slide'];
+
+        let settings = {
+            type: type[Math.floor(Math.random() * type.length)],
+            position: 'top-right',
+            timeOut: 3000,
+            animation: animation[Math.floor(Math.random() * animation.length)],
+            title: '',
+            description: 'your password is wrong!'
+        };
+        iNotification.notify(settings);
+    }
+
+
+</script>
+
+</body>
+</html>
+
